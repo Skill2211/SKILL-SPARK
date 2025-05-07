@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Information</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f7f7f7;
+    }
+    form {
+      max-width: 600px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .form-control {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #1d7efd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0264e3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Your Information</h1>
+  <form id="form">
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+    </div>
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+    </div>
+    <div class="form-control">
+      <label for="age">Age</label>
+      <input type="number" id="age" placeholder="Enter your age" />
+    </div>
+    <div class="form-control">
+      <label for="role">Which option best describes you?</label>
+      <select id="role">
+        <option value="student">Student</option>
+        <option value="intern">Intern</option>
+        <option value="professional">Professional</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <label>Would you recommend Skill Spark?</label>
+      <label><input type="radio" name="recommend" value="yes"> Yes</label>
+      <label><input type="radio" name="recommend" value="no"> No</label>
+      <label><input type="radio" name="recommend" value="maybe"> Maybe</label>
+    </div>
+    <div class="form-control">
+      <label>Languages and Frameworks Known</label>
+      <label><input type="checkbox" name="langs" value="C"> C</label>
+      <label><input type="checkbox" name="langs" value="Java"> Java</label>
+      <label><input type="checkbox" name="langs" value="Python"> Python</label>
+      <label><input type="checkbox" name="langs" value="React"> React</label>
+    </div>
+    <div class="form-control">
+      <label for="comment">Any Comments or Suggestions?</label>
+      <textarea id="comment" rows="4" placeholder="Type here..."></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
