@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise Test</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #test-container {
+      display: none;
+    }
+    #start-button {
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: #1d7efd;
+      color: white;
+      border: none;
+      border-radius: 6px;
+    }
+    #start-button:hover {
+      background-color: #0264e3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Surprise Test!</h1>
+  <button id="start-button">Begin Test</button>
+
+  <div id="test-container">
+    <h2>Instructions</h2>
+    <p>This is a surprise test! Answer the questions below.</p>
+
+    <form id="test-form">
+      <div>
+        <label>1. How many types of loops in C?</label>
+        <input type="text" id="question1">
+      </div>
+      <div>
+        <label>2. What is 2 + 2?</label>
+        <input type="text" id="question2">
+      </div>
+      <div>
+        <label>3. Best college in Uttarkashi?</label>
+        <input type="text" id="question3">
+      </div>
+      <button type="button" onclick="submitTest()">Submit</button>
+    </form>
+
+    <div id="results-container" style="display:none;">
+      <h3>Results</h3>
+      <p id="results-message"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("start-button").onclick = () => {
+      document.getElementById("test-container").style.display = "block";
+      document.getElementById("start-button").style.display = "none";
+    };
+
+    function submitTest() {
+      const q1 = document.getElementById("question1").value.trim().toLowerCase();
+      const q2 = document.getElementById("question2").value.trim();
+      const q3 = document.getElementById("question3").value.trim();
+
+      let score = 0;
+      if (q1 === "3") score++;
+      if (q2 === "4") score++;
+      if (q3.toLowerCase() === "it baun") score++;
+
+      const msg = score === 3 ? "🎉 Perfect score!" :
+                  score === 0 ? "😢 Try again!" :
+                  `You scored ${score} out of 3.`;
+
+      document.getElementById("results-message").textContent = msg;
+      document.getElementById("results-container").style.display = "block";
+      document.getElementById("test-form").style.display = "none";
+    }
+  </script>
+</body>
+</html>
